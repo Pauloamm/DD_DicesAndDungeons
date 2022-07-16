@@ -474,6 +474,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3626384293534546813, guid: 95f525301e6be4946aaa7339785328db,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4904450862983804677, guid: 95f525301e6be4946aaa7339785328db,
         type: 3}
       propertyPath: hp
@@ -966,8 +971,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceHolder: {fileID: 652570103}
   inventory:
-  - {fileID: 6030864936509314897, guid: c2e5f6280801e5f49820a15c4080025e, type: 3}
+  - {fileID: 2464779964941813724, guid: 30c3744828d00f74eb25578eb62ac312, type: 3}
   - {fileID: 3937305207981564116, guid: 3ec3d9f790b3f2a48a24db70c2b81566, type: 3}
+  - {fileID: 8362792709893615359, guid: 6d2deb8983f51844ab3364ceed12cbfc, type: 3}
+  - {fileID: 2512979799708496499, guid: f130c67198d0e4a4d987d7ec4c52de10, type: 3}
+  - {fileID: 6030864936509314897, guid: c2e5f6280801e5f49820a15c4080025e, type: 3}
+  - {fileID: 2464779964941813724, guid: f2e563d755ddbb04f9f7cefa7f5f535e, type: 3}
+  - {fileID: 2464779964941813724, guid: 450115da23e45d743a6f5ca6c169beaa, type: 3}
   diceThrow: {fileID: 963194229}
 --- !u!1001 &1095524940
 PrefabInstance:
