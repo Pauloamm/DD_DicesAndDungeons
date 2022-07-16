@@ -9,47 +9,38 @@ public class DiceThrow : MonoBehaviour
 {
     
     //TESTE 
-
-    [SerializeField] private GameObject testDice;
-    [SerializeField] private float diceImpulseStrength = 10f;
+    [SerializeField] private DicesInventory dicesInventory;
+    private GameObject dice => dicesInventory.GetCurrentDiceInHand;
     [SerializeField] private Transform diceHolderT;
     
     
     private bool canThrow = false;
-    
-  
 
+    public delegate void DiceAction();
+
+    public event DiceAction diceThrown;
+    
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             canThrow = true;
-            Debug.Log("DISPARA CARALHO");
         }
 
         if (Input.GetKeyDown(KeyCode.P))
-            Instantiate(testDice,diceHolderT);
+            Instantiate(dice,diceHolderT);
 
     }
 
      void FixedUpdate()
     {
         if (canThrow)
-        {
-            ShootDice();
+        {   
+            dice.GetComponent<Dice>().Shoot();
+            diceThrown?.Invoke();
             canThrow = false;
         }
     }
 
-    void ShootDice()
-    {
-        testDice.GetComponent<Collider>().enabled = true;
-        Rigidbody rb = testDice.GetComponent<Rigidbody>();
-        testDice.transform.parent = null;
-        rb.isKinematic = false;
-        rb.AddForce(this.transform.forward * diceImpulseStrength,ForceMode.Impulse);
-
-        canThrow = false;
-    }
 }

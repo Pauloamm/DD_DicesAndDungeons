@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Goop : MonoBehaviour
 {
+    [SerializeField]private float slowSpeed;
+    
     private float duration;
 
     public float SetDuration
@@ -52,7 +54,7 @@ public class Goop : MonoBehaviour
         {
             if ( hit.gameObject.CompareTag("Enemy"))
             {
-                hit.gameObject.GetComponent<Enemy>().SetSpeed = 0f;
+                hit.gameObject.GetComponent<Enemy>().SetSpeed = slowSpeed;
             }
 
 

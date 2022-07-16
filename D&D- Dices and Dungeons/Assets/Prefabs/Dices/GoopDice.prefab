@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2464779964941813724}
   m_LocalRotation: {x: -0.17612769, y: -0, z: -0, w: 0.9843674}
-  m_LocalPosition: {x: 0, y: -0.011, z: 0.004}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,5 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  diceImpulseStrength: 10
   goopPrefab: {fileID: 713924753109590180, guid: adff4f600d9cc544681f856410cb3f26,
     type: 3}
+  goopDuration: 0
