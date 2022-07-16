@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2464779964941813724
+--- !u!1 &5447177945805245446
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2464779964941813725}
-  - component: {fileID: 2464779964941813696}
-  - component: {fileID: 2464779964941813727}
-  - component: {fileID: 2464779964941813726}
-  - component: {fileID: 2464779964941813697}
-  - component: {fileID: 495585942178543799}
-  m_Layer: 2
-  m_Name: BlackHoleDice
+  - component: {fileID: 1993982967958917277}
+  - component: {fileID: 6612311914548506789}
+  - component: {fileID: 8895570592959977556}
+  m_Layer: 0
+  m_Name: pTorus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2464779964941813725
+--- !u!4 &1993982967958917277
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464779964941813724}
-  m_LocalRotation: {x: -0.17612769, y: -0, z: -0, w: 0.9843674}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_GameObject: {fileID: 5447177945805245446}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8786233560955891599}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20.289001, y: 0, z: 0}
---- !u!33 &2464779964941813696
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6612311914548506789
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464779964941813724}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2464779964941813727
+  m_GameObject: {fileID: 5447177945805245446}
+  m_Mesh: {fileID: 5876722744731809403, guid: 5e23b3b185bb6794bbebd9d49ffa7010, type: 3}
+--- !u!23 &8895570592959977556
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464779964941813724}
+  m_GameObject: {fileID: 5447177945805245446}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c8563abc9e868244bad9f60067db3bcf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,28 +79,62 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2464779964941813726
+--- !u!1 &8261053569370977589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8786233560955891599}
+  - component: {fileID: 259499841272471898}
+  - component: {fileID: 7315180545413677264}
+  - component: {fileID: 1802526140733895602}
+  m_Layer: 0
+  m_Name: BlackHoleDice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8786233560955891599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261053569370977589}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_Children:
+  - {fileID: 1993982967958917277}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &259499841272471898
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464779964941813724}
+  m_GameObject: {fileID: 8261053569370977589}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 6.4, y: 6.4, z: 6.4}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2464779964941813697
+--- !u!54 &7315180545413677264
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464779964941813724}
+  m_GameObject: {fileID: 8261053569370977589}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -111,13 +142,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &495585942178543799
+--- !u!114 &1802526140733895602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464779964941813724}
+  m_GameObject: {fileID: 8261053569370977589}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89c824a61c0a7984184af6cdf2ed01a9, type: 3}
@@ -125,6 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   diceImpulseStrength: 10
-  blackHolePrefab: {fileID: 713924753109590180, guid: 6cdfa4a797762dd4488addcd3744bde6,
+  blackHolePrefab: {fileID: 6033889411244792883, guid: 3490f8b9828a95743b6ec86e0a00b582,
     type: 3}
   blackHoleDuration: 0

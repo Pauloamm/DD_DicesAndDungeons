@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlackHole : MonoBehaviour
 {
+    [SerializeField] private float rotationStrength;
     private float duration;
 
     public float SetDuration
@@ -15,8 +16,8 @@ public class BlackHole : MonoBehaviour
     }
     private float timer;
 
-    private float radius = 3f;
-    private float strength = 10f;
+    private float radius = 6f;
+    private float strength = 2f;
     
     // Start is called before the first frame update
     void Awake()
@@ -32,9 +33,10 @@ public class BlackHole : MonoBehaviour
             DestroyImmediate(this.gameObject);
             return;
         }
-
-        timer += Time.deltaTime;
         
+        
+        timer += Time.deltaTime;
+        transform.Rotate(transform.up,rotationStrength);
         CheckEnemiesOnBlackHole();
     }
 

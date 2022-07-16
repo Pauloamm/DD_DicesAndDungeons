@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798619737514057224}
-  - component: {fileID: 7004441217662192857}
   - component: {fileID: 6609589717400616294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GooPuddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,20 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7004441217662192857
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 26622230760015026}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &6609589717400616294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +56,7 @@ GameObject:
   - component: {fileID: 8325370580724905027}
   - component: {fileID: 3746522863762290791}
   - component: {fileID: 8648503015263576313}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GooPuddle:ZBrushPolyMesh3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

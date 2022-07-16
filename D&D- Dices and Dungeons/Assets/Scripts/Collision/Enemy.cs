@@ -69,9 +69,9 @@ public class Enemy : MonoBehaviour, IHittable
 
     void Move()
     {
-        Vector3 dirToPlayer = Follow().normalized * speed;
+        Vector3 dirToPlayer = Follow().normalized ;
 
-        Vector3 direction = Separation() + dirToPlayer + velocityModifier;
+        Vector3 direction = Separation() + (dirToPlayer* speed) + velocityModifier;
 
 
         this.transform.position += direction * (speed * Time.deltaTime);

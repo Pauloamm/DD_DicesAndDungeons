@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1032258574816684791}
   - component: {fileID: 7936524930325635845}
   - component: {fileID: 4469402004019751396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Freeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
