@@ -8,10 +8,9 @@ public class NormalDice : Dice
     private int maxRoll = 6;
     
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        Random rg = new Random();
-        damage = rg.Next(maxRoll) + 1;
+       base.Start();
     }
 
 }

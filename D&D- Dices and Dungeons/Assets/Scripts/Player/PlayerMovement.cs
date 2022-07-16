@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         this.playerRb = this.GetComponent<Rigidbody>();
 
         // Base Speed
-        this.playerSpeed = 2f;
+        this.playerSpeed = 4f;
 
     }
 
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
    
-
+    
 
 
 }

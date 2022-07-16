@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Dice : MonoBehaviour
 {
@@ -18,7 +19,13 @@ public class Dice : MonoBehaviour
         } 
     }
     
-    
+    protected int maxRoll = 6;
+
+    protected virtual void Start()
+    {
+        Random rg = new Random();
+        damage = rg.Next(maxRoll) + 1;
+    }
     
     protected virtual void OnCollisionEnter(Collision collision)
     {

@@ -1,27 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class BombDice : Dice
 {
 
-    private int maxRoll = 6;
 
     [SerializeField] private int explosionRadius;
 
     [SerializeField]private ParticleSystem explosionParticlesPrefab;
    
-    void Start()
-    {
-        Random rg = new Random();
-        damage = rg.Next(maxRoll) + 1;
-    }
+   
     
     protected override void OnCollisionEnter(Collision collision)
     {
         Explosion();
-        Debug.Log("IT HIT");
+        DiceBehaviour();
+
     }
 
 
@@ -41,7 +36,6 @@ public class BombDice : Dice
 
         }
         
-        DiceBehaviour();
 
     }
 
