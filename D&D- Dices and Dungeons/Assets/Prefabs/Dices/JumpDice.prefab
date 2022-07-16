@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3563053035198293585}
   - component: {fileID: 7912997533761464897}
   - component: {fileID: 7461401263617994936}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: JumpDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8116268667723779806}
   - component: {fileID: 492255194913339035}
   - component: {fileID: 3975966824336546040}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DiceBase:pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

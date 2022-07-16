@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     // Essential Components----------------------------------------
 
     [SerializeField] private Rigidbody playerRb;
+
+    private float hp = 5;
+
     // ------------------------------------------------------------
 
 
@@ -40,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerTransitionController.Instance.PlayerReady)
+            return;
+
         getInputMovement();
     }
 
@@ -73,8 +79,8 @@ public class PlayerMovement : MonoBehaviour
         return (GameObject.Find("Player_1").transform.position - objectPos).magnitude;
     }
 
-   
-    
-
-
+    public void TakeDamage()
+    {
+        hp--;
+    }
 }

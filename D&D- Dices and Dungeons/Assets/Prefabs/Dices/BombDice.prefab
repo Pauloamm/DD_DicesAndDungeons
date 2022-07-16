@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4132712910826977613}
   - component: {fileID: -5464454463901336345}
   - component: {fileID: 2072145337164961845}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BombDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6868774511857639195}
   - component: {fileID: 6682486077348401400}
   - component: {fileID: 8360538276993443860}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,10 +242,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 385cab512505c5e40b647d429bd2e3d9, type: 2}
+    - target: {fileID: -2709223245293637496, guid: bc0496b33591d364f96de11eae793591,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bc0496b33591d364f96de11eae793591,
         type: 3}
       propertyPath: m_Name
       value: Fuse
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc0496b33591d364f96de11eae793591,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc0496b33591d364f96de11eae793591, type: 3}

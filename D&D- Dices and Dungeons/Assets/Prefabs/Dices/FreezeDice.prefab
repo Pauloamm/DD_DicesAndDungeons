@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7366272452965283593}
   - component: {fileID: 7620092481330777822}
   - component: {fileID: 6254952958344000522}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6132323717706647918}
   - component: {fileID: 4092047542032572302}
   - component: {fileID: 1504073806654382116}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FreezeDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

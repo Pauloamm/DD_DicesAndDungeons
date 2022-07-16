@@ -18,8 +18,10 @@ public class JumpDice : Dice
 
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (this.transform.parent != null) return;
         JumpBoost();
         base.DiceBehaviour();

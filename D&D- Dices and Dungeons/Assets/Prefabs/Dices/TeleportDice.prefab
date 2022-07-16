@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2464779964941813726}
   - component: {fileID: 2464779964941813697}
   - component: {fileID: 6768091877605795370}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TeleportDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

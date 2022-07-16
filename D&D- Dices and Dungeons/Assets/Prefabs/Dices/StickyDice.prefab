@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5592411626412741007}
   - component: {fileID: 3246887510744288661}
   - component: {fileID: 6000315418862620699}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StickyDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   diceImpulseStrength: 10
-  goopPrefab: {fileID: 713924753109590180, guid: adff4f600d9cc544681f856410cb3f26,
+  goopPrefab: {fileID: 26622230760015026, guid: 2458da6e12261e247a735cf0d6976cdf,
     type: 3}
   goopDuration: 0

@@ -33,7 +33,6 @@ public class Goop : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
             return;
-
         }
 
         timer += Time.deltaTime;
@@ -41,14 +40,9 @@ public class Goop : MonoBehaviour
         CheckEnemiesOnGoop();
     }
 
-
-
-
-
     void CheckEnemiesOnGoop()
     {
         Collider[] collidersHit = Physics.OverlapSphere(transform.position, radius);
-
 
         foreach (Collider hit in collidersHit)
         {
@@ -56,8 +50,6 @@ public class Goop : MonoBehaviour
             {
                 hit.gameObject.GetComponent<Enemy>().SetSpeed = slowSpeed;
             }
-
-
         }
     }
 

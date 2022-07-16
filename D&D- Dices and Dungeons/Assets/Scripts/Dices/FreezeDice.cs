@@ -28,6 +28,15 @@ public class FreezeDice : Dice
 
     void SpawnFreeze()
     {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.tag.Equals("Ground"))
+            {
+                groundLevel = hit.point.y;
+            }
+        }
+
         GameObject o = Instantiate(freezePrefab, new Vector3(transform.position.x, groundLevel, transform.position.z),
             Quaternion.identity);
 

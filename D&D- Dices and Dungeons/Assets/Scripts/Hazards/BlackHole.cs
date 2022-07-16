@@ -31,7 +31,6 @@ public class BlackHole : MonoBehaviour
         {
             DestroyImmediate(this.gameObject);
             return;
-
         }
 
         timer += Time.deltaTime;
@@ -39,14 +38,9 @@ public class BlackHole : MonoBehaviour
         CheckEnemiesOnBlackHole();
     }
 
-
-
-
-
     void CheckEnemiesOnBlackHole()
     {
         Collider[] collidersHit = Physics.OverlapSphere(transform.position, radius);
-
 
         foreach (Collider hit in collidersHit)
         {
@@ -56,8 +50,6 @@ public class BlackHole : MonoBehaviour
                 directionToPull.y *= 0;
                 hit.gameObject.GetComponent<Enemy>().SetVelocityModifier = directionToPull*strength;
             }
-
-
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class Dice : MonoBehaviour
+public class Dice : FloatingItem
 {
     [SerializeField] protected int damage;
 
@@ -31,13 +31,13 @@ public class Dice : MonoBehaviour
         DiceBehaviour();
     }
 
-    public virtual void Shoot()
+    public virtual void Shoot(Vector3 throwDirection)
     {
         this.GetComponent<Collider>().enabled = true;
         Rigidbody rb = this.GetComponent<Rigidbody>();
         this.transform.parent = null;
         rb.isKinematic = false;
-        rb.AddForce(this.transform.forward * diceImpulseStrength, ForceMode.Impulse);
+        rb.AddForce(throwDirection * diceImpulseStrength, ForceMode.Impulse);
     }
 
     protected virtual void DiceBehaviour()

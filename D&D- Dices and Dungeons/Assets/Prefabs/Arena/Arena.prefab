@@ -1268,12 +1268,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 294079257382830898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9561cb77058a5aa41bb683268a89c5cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 45710caa42e781b4eb3245dbcbc77443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _currentArenaLevel: 1
   _currentWave: 1
-  _waveTransitionSpeed: 0
+  _waveTransitionSpeed: 25
   _arenaLevelsMaterials:
   - {fileID: 2100000, guid: 051ad332f22b44c4eaa4c1cd1960ee9e, type: 2}
   - {fileID: 2100000, guid: 3a3b174e643e0294690a8a98df8b8de2, type: 2}

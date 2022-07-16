@@ -42,6 +42,9 @@ public class DicesInventory : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerTransitionController.Instance.PlayerReady)
+            return;
+
         RotateDice();
     }
     

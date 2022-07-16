@@ -10,7 +10,7 @@ public class StickyDice : Dice
     private float groundLevel = 0f;
     
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         damage = 0;
         Random rg = new Random();
@@ -28,11 +28,18 @@ public class StickyDice : Dice
 
     void SpawnGoop()
     {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.tag.Equals("Ground"))
+            {
+                groundLevel = hit.point.y;
+            }
+        }
+
         GameObject o = Instantiate(goopPrefab, new Vector3(transform.position.x, groundLevel, transform.position.z),
             Quaternion.identity);
 
         o.GetComponent<Goop>().SetDuration = goopDuration;
-
-
     }
 }

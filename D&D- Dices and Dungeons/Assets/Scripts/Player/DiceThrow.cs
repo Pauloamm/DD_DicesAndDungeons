@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class DiceThrow : MonoBehaviour
 {
-    
     //TESTE 
     [SerializeField] private DicesInventory dicesInventory;
     private GameObject dice => dicesInventory.GetCurrentDiceInHand;
@@ -23,6 +22,9 @@ public class DiceThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerTransitionController.Instance.PlayerReady)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             canThrow = true;
@@ -30,17 +32,17 @@ public class DiceThrow : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
             Instantiate(dice,diceHolderT);
-
     }
 
      void FixedUpdate()
     {
         if (canThrow)
-        {   
-            dice.GetComponent<Dice>().Shoot();
+        {
+            GetComponentInChildren<Animator>().SetTrigger("Attack");
+
+            dice.GetComponent<Dice>().Shoot(transform.forward);
             diceThrown?.Invoke();
             canThrow = false;
         }
     }
-
 }

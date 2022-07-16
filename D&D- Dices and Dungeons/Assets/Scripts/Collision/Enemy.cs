@@ -32,6 +32,8 @@ public class Enemy : MonoBehaviour, IHittable
 
     private Vector3 velocityModifier;
 
+    private float minDistToAttack = 1.5f;
+
     public Vector3 SetVelocityModifier
     {
         set { velocityModifier = value; }
@@ -61,6 +63,8 @@ public class Enemy : MonoBehaviour, IHittable
         Move();
         speed = defaultSpeed;
         velocityModifier = Vector3.zero;
+
+        TryToAttack();
     }
 
     void Move()
@@ -108,5 +112,18 @@ public class Enemy : MonoBehaviour, IHittable
     void Die()
     {
         DestroyImmediate(this.gameObject);
+    }
+
+    void TryToAttack()
+    {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        
+        if (distance <= minDistToAttack)
+        {
+            // Attack
+            player.GetComponent<PlayerMovement>().TakeDamage();
+
+            GetComponent<Animator>().SetTrigger("Attack");
+        }
     }
 }

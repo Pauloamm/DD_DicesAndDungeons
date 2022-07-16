@@ -108,6 +108,8 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
+        if (!PlayerTransitionController.Instance.PlayerReady) return;
+
         if (enemiesToSpawn > 0)
         {
             if (timeUntilNextSpawn <= 0)

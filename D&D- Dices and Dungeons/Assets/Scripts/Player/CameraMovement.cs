@@ -33,6 +33,9 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerTransitionController.Instance.PlayerReady)
+            return;
+
         playerCurrentState = this.GetComponentInChildren<PlayerMovement>().playerCurrentState;
 
         cameraManager();
