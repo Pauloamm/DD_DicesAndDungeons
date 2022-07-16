@@ -3,12 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 
 public class Enemy : MonoBehaviour, IHittable
 {
     [SerializeField] private int hp;
+
+    public int SetHP
+    {
+        set { hp = value; }
+    }
+
     [SerializeField] private float speed;
+    [SerializeField] private AudioClip hitSFX;
 
     public float SetSpeed
     {
@@ -32,6 +40,7 @@ public class Enemy : MonoBehaviour, IHittable
     public void OnDiceHit(Dice dice)
     {
         hp -= dice.Damage;
+        GameObject.Find("EnemyHitSoundPlayer").GetComponent<AudioSource>().PlayOneShot(hitSFX);
     }
 
     private void Awake()
@@ -56,9 +65,14 @@ public class Enemy : MonoBehaviour, IHittable
 
     void Move()
     {
-        Vector3 direction = Separation() + Follow() + velocityModifier;
+        Vector3 dirToPlayer = Follow();
+
+        Vector3 direction = Separation() + dirToPlayer + velocityModifier;
+
 
         this.transform.position += direction * (speed * Time.deltaTime);
+
+        this.transform.forward = dirToPlayer;
     }
 
     Vector3 Separation()

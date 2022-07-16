@@ -5,12 +5,12 @@ using Random = System.Random;
 
 public class Dice : MonoBehaviour
 {
-    [SerializeField]protected int damage;
-    
+    [SerializeField] protected int damage;
+
     [SerializeField] private float diceImpulseStrength = 10f;
     public int Damage => damage;
 
-    
+
     protected int maxRoll = 6;
 
     protected virtual void Start()
@@ -18,7 +18,7 @@ public class Dice : MonoBehaviour
         Random rg = new Random();
         damage = rg.Next(maxRoll) + 1;
     }
-    
+
     protected virtual void OnCollisionEnter(Collision collision)
     {
         IHittable temp = collision.gameObject.GetComponent<IHittable>();
@@ -26,10 +26,9 @@ public class Dice : MonoBehaviour
         if (temp != null)
         {
             temp.OnDiceHit(this);
-            DiceBehaviour();
         }
-        
-        
+
+        DiceBehaviour();
     }
 
     public virtual void Shoot()
@@ -38,10 +37,10 @@ public class Dice : MonoBehaviour
         Rigidbody rb = this.GetComponent<Rigidbody>();
         this.transform.parent = null;
         rb.isKinematic = false;
-        rb.AddForce(this.transform.forward * diceImpulseStrength,ForceMode.Impulse);
+        rb.AddForce(this.transform.forward * diceImpulseStrength, ForceMode.Impulse);
     }
 
-    protected virtual void DiceBehaviour() 
+    protected virtual void DiceBehaviour()
     {
         Destroy(this.gameObject);
     }

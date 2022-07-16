@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2996078462490061001}
-  - component: {fileID: 7912997533761464897}
   - component: {fileID: 3563053035198293585}
+  - component: {fileID: 7912997533761464897}
   - component: {fileID: 7461401263617994936}
   m_Layer: 0
   m_Name: JumpDice
@@ -34,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3563053035198293585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512979799708496499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 6.4, y: 6.4, z: 6.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7912997533761464897
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50,19 +63,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3563053035198293585
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2512979799708496499}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 6.4, y: 6.4, z: 6.4}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7461401263617994936
 MonoBehaviour:
   m_ObjectHideFlags: 0
