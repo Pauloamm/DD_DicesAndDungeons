@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
-  speed: 1
+  speed: 1.5
   hitSFX: {fileID: 8300000, guid: 860bd2d5f91e5a147977dd7f3ca7eefe, type: 3}
 --- !u!82 &3080601147886110584
 AudioSource:
