@@ -123,8 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b0e0064d77110a4cb2f05ff747e48fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  diceImpulseStrength: 10
+  diceSprite: {fileID: 21300000, guid: a63e3b76def86254f8a1ff658d32e051, type: 3}
   goopPrefab: {fileID: 26622230760015026, guid: 2458da6e12261e247a735cf0d6976cdf,
     type: 3}
-  goopDuration: 0

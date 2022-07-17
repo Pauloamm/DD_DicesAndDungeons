@@ -8,6 +8,9 @@ using UnityEngine.EventSystems;
 
 public class Enemy : MonoBehaviour, IHittable
 {
+    private float attackCoolDown = 2.0f;
+    private float timeToNextAttack = 0;
+
     [SerializeField] private int hp;
 
     public int SetHP
@@ -41,7 +44,7 @@ public class Enemy : MonoBehaviour, IHittable
 
     public void OnDiceHit(Dice dice)
     {
-        hp -= dice.Damage;
+        hp -= dice.DiceEffectMultiplier;
         GameObject.Find("EnemyHitSoundPlayer").GetComponent<AudioSource>().PlayOneShot(hitSFX);
     }
 
@@ -60,18 +63,27 @@ public class Enemy : MonoBehaviour, IHittable
 
     private void LateUpdate()
     {
+        Debug.Log(timeToNextAttack);
+        if (timeToNextAttack > 0)
+        {
+            timeToNextAttack -= Time.deltaTime;
+            speed = defaultSpeed * 0.5f;
+        }
+        else
+        {
+            TryToAttack();
+        }
+
         Move();
         speed = defaultSpeed;
         velocityModifier = Vector3.zero;
-
-        TryToAttack();
     }
 
     void Move()
     {
         Vector3 dirToPlayer = Follow().normalized ;
 
-        Vector3 direction = Separation() + (dirToPlayer* speed) + velocityModifier;
+        Vector3 direction = Separation() + (dirToPlayer * speed) + velocityModifier;
 
 
         this.transform.position += direction * (speed * Time.deltaTime);
@@ -111,6 +123,8 @@ public class Enemy : MonoBehaviour, IHittable
 
     void Die()
     {
+        GameObject.Find("WaveMananger").GetComponent<WaveManager>().currentEnemies.Remove(this.gameObject);
+
         DestroyImmediate(this.gameObject);
     }
 
@@ -121,9 +135,12 @@ public class Enemy : MonoBehaviour, IHittable
         if (distance <= minDistToAttack)
         {
             // Attack
-            player.GetComponent<PlayerMovement>().TakeDamage();
+            player.GetComponent<PlayerMovement>().TakeDamage(1);
 
             GetComponent<Animator>().SetTrigger("Attack");
+
+            Debug.Log("Reset timer");
+            timeToNextAttack = attackCoolDown;
         }
     }
 }

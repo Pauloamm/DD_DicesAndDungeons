@@ -75,8 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3caa6ec8c901a419221332d8e73ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  diceImpulseStrength: 10
+  diceSprite: {fileID: 21300000, guid: 73517370a43d50042b64113054b4d0a5, type: 3}
 --- !u!1 &7927467002903422217
 GameObject:
   m_ObjectHideFlags: 0

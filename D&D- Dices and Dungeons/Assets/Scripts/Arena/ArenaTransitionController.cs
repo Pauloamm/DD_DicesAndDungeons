@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(Material))]
+[RequireComponent(typeof(Material))]
 public class ArenaTransitionController : MonoBehaviour
 {
     public static ArenaTransitionController Instance { get; private set; }
     private PlayerTransitionController _playerTransitionController;
+
+    public bool canLoadNewWave;
 
     [SerializeField]
     private int _currentArenaLevel;
@@ -17,7 +19,6 @@ public class ArenaTransitionController : MonoBehaviour
 
     private Vector3[] _wavesRotations;
 
-    [SerializeField]
     private float _waveTransitionSpeed;
 
     public bool LoadingNewWave { get; private set; }
@@ -51,11 +52,16 @@ public class ArenaTransitionController : MonoBehaviour
 
     private void Update()
     {
+        if (!LoadingNewWave)
+        {
+            canLoadNewWave = false;
+        }
+
         if (LoadingNewWave)
         {
             RotateArena();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && _playerTransitionController.PlayerReady)
+        else if (canLoadNewWave && _playerTransitionController.PlayerReady)
         {
             if (_currentWave < _wavesRotations.Length)
             {

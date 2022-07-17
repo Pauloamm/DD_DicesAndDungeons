@@ -80,10 +80,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> spawners;
     private List<GameObject> currentActiveSpawners;
 
+    [SerializeField]
+    public List<GameObject> currentEnemies;
     
     // Start is called before the first frame update
     void Start()
     {
+        currentEnemies = new List<GameObject>();
+
         waves = new Queue<WaveValues>();
         waves.Enqueue(firstWave);
         waves.Enqueue(secondWave);
@@ -125,18 +129,22 @@ public class WaveManager : MonoBehaviour
             timeUntilNextSpawn -= Time.deltaTime;
             return;
         }
-        
-        //GetNextWave();
-    }
+        else if (currentEnemies.Count <= 0)
+        {
+            GetNextWave();
 
+            ArenaTransitionController.Instance.canLoadNewWave = true;
+        }
+    }
 
     void SpawnEnemyInRandomSpawner()
     {
         Random rg = new Random();
         int spawnerToSelect = rg.Next(spawners.Count);
         int enemyHP = rg.Next(currentWave.minEnemyyHP,currentWave.maxEnemyHP) ;
-        spawners[spawnerToSelect].GetComponent<Spawner>().Spawn(enemyHP);
+        GameObject newEnemy = spawners[spawnerToSelect].GetComponent<Spawner>().Spawn(enemyHP);
 
+        currentEnemies.Add(newEnemy);
     }
     static void LowerEnemiesRemaining()
     {

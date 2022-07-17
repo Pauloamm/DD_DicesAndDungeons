@@ -1,22 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class Dice : FloatingItem
 {
-    [SerializeField] protected int damage;
+    [SerializeField]
+    public Sprite diceSprite;
 
-     private float diceImpulseStrength = 20f;
-    public int Damage => damage;
+    [SerializeField]
+    public int DiceEffectMultiplier { get; protected set; }
 
+    private float diceImpulseStrength = 20f;
 
-    protected int maxRoll = 6;
+    private int maxRoll = 6;
+
+    private Vector3[] _diceNewUpVector;
 
     protected virtual void Start()
     {
         Random rg = new Random();
-        damage = rg.Next(maxRoll) + 1;
+        DiceEffectMultiplier = rg.Next(maxRoll) + 1;
+
+        //_diceNewUpVector = new Vector3[6];
+        //_diceNewUpVector[0] = new Vector3(0, 1, 0);
+        //_diceNewUpVector[1] = new Vector3(0, 0, -1);
+        //_diceNewUpVector[2] = new Vector3(-1, 0, 0);
+        //_diceNewUpVector[3] = new Vector3(1, 0, 0);
+        //_diceNewUpVector[4] = new Vector3(0, 0, 1);
+        //_diceNewUpVector[5] = new Vector3(0, -1, 0);
+
+        Sprite diceNumberSprite = Resources.Load<Sprite>("GameUI/DiceNumbers/" + DiceEffectMultiplier);
+        GameObject.Find("DiceNumber").GetComponent<Image>().sprite = diceNumberSprite;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
     }
 
     protected virtual void OnCollisionEnter(Collision collision)

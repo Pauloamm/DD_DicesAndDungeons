@@ -30,17 +30,20 @@ public class Spawner : MonoBehaviour
     //     else timer += Time.deltaTime;
     // }
 
-    public void Spawn(int enemyHP)
+    public GameObject Spawn(int enemyHP)
     {
-        SpawnEnemy(enemyHP);
+        GameObject newEnemy = SpawnEnemy(enemyHP);
         PoofEffect();
+
+        return newEnemy;
     }
 
-    void SpawnEnemy(int enemyHP)
+    public GameObject SpawnEnemy(int enemyHP)
     {
         Enemy e = Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, null).GetComponent<Enemy>();
         e.SetHP = enemyHP;
 
+        return e.gameObject;
     }
 
     void PoofEffect() => Instantiate(poofSmokePrefab, this.transform.position, Quaternion.identity, null);

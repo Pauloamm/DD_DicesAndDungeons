@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody playerRb;
 
-    private float hp = 5;
+    private int hp = 3;
+
+    [SerializeField]
+    private GameObject[] hearDices;
 
     // ------------------------------------------------------------
 
@@ -31,13 +35,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         // Gets acess to player rigidbody
         this.playerRb = this.GetComponent<Rigidbody>();
 
         // Base Speed
         this.playerSpeed = 6f;
-
     }
 
     // Update is called once per frame
@@ -69,8 +71,6 @@ public class PlayerMovement : MonoBehaviour
                 playerCurrentState = playerState.IDLE;
 
             playerRb.transform.Translate(movDirection * playerSpeed * Time.deltaTime);
-
-
         }
     }
 
@@ -79,8 +79,16 @@ public class PlayerMovement : MonoBehaviour
         return (GameObject.Find("Player_1").transform.position - objectPos).magnitude;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        hp--;
+        hp -= damage;
+        hp = Mathf.Clamp(hp, 0, hp);
+
+        if (hp <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
+        hearDices[hp].SetActive(false);
     }
 }

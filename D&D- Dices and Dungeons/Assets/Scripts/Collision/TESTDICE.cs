@@ -11,7 +11,7 @@ public class TESTDICE : Dice
     void Start()
     {
         Random rg = new Random();
-        damage = rg.Next(maxRoll) + 1 ;
+        DiceEffectMultiplier = rg.Next(maxRoll) + 1 ;
     }
 
     // Update is called once per frame

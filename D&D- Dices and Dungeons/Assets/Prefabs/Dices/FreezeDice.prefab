@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3b175c9005289448397f404627c28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  diceImpulseStrength: 10
+  diceSprite: {fileID: 21300000, guid: a36cee6dd1f14254087b533d13f2f8f5, type: 3}
   freezePrefab: {fileID: 5360542396304255443, guid: 5bbe54104ff26e3408f806c0c73c530a,
     type: 3}
   freezeDuration: 0

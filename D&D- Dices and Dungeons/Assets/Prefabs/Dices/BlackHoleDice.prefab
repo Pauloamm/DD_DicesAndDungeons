@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c824a61c0a7984184af6cdf2ed01a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  diceImpulseStrength: 10
+  diceSprite: {fileID: 21300000, guid: 833bb296324b92b48b3495c9640bb482, type: 3}
   blackHolePrefab: {fileID: 6033889411244792883, guid: 3490f8b9828a95743b6ec86e0a00b582,
     type: 3}
   blackHoleDuration: 0

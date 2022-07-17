@@ -8,18 +8,16 @@ public class FreezeDice : Dice
     [SerializeField] private GameObject freezePrefab;
     [SerializeField]private float freezeDuration;
     private float groundLevel = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    protected override void Start()
     {
-        damage = 0;
-        Random rg = new Random();
-        freezeDuration = rg.Next(maxRoll) + 1;
+        base.Start();
+
+        freezeDuration = DiceEffectMultiplier;
+
+        DiceEffectMultiplier = 0;
     }
 
-   
-    
-    
     protected override void OnCollisionEnter(Collision collision)
     {
         SpawnFreeze();
@@ -41,7 +39,5 @@ public class FreezeDice : Dice
             Quaternion.identity);
 
         o.GetComponent<Freeze>().SetDuration = freezeDuration;
-
-
     }
 }

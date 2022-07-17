@@ -7,20 +7,18 @@ using Random = System.Random;
 public class BlackHoleDice : Dice
 {
     [SerializeField] private GameObject blackHolePrefab;
-    [SerializeField]private float blackHoleDuration;
+    [SerializeField] private float blackHoleDuration;
     private float groundLevel = 0f;
-    
-    // Start is called before the first frame update
+
     protected override void Start()
     {
-        damage = 0;
-        Random rg = new Random();
-        blackHoleDuration = rg.Next(maxRoll) + 1;
+        base.Start();
+
+        blackHoleDuration = DiceEffectMultiplier;
+
+        DiceEffectMultiplier = 0;
     }
 
-   
-    
-    
     protected override void OnCollisionEnter(Collision collision)
     {
         SpawnBlackHole();
@@ -43,5 +41,4 @@ public class BlackHoleDice : Dice
 
         o.GetComponent<BlackHole>().SetDuration = blackHoleDuration;
     }
-   
 }

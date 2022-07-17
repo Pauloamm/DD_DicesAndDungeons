@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class BombDice : Dice
 {
-
-
     [SerializeField] private int explosionRadius;
 
     [SerializeField]private ParticleSystem explosionParticlesPrefab;
-   
-   
     
     protected override void OnCollisionEnter(Collision collision)
     {
         Explosion();
         DiceBehaviour();
-
     }
-
 
     void Explosion()
     {
@@ -32,11 +26,7 @@ public class BombDice : Dice
             {
                 temp.OnDiceHit(this);
             }
-            
-
         }
-        
-
     }
 
     protected override void DiceBehaviour()

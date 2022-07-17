@@ -154,5 +154,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e06a75ed3368c346b2871f3119659f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  diceImpulseStrength: 10
+  diceSprite: {fileID: 21300000, guid: 1db4e7bb2d70e1541a580cfa5321eafa, type: 3}

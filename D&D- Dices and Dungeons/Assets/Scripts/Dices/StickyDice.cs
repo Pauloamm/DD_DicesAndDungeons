@@ -6,20 +6,18 @@ using Random = System.Random;
 public class StickyDice : Dice
 {
     [SerializeField] private GameObject goopPrefab;
-    [SerializeField]private float goopDuration;
+    [SerializeField] private float stickyDuration;
     private float groundLevel = 0f;
-    
-    // Start is called before the first frame update
+
     protected override void Start()
     {
-        damage = 0;
-        Random rg = new Random();
-        goopDuration = rg.Next(maxRoll) + 1;
+        base.Start();
+
+        stickyDuration = DiceEffectMultiplier;
+
+        DiceEffectMultiplier = 0;
     }
 
-   
-    
-    
     protected override void OnCollisionEnter(Collision collision)
     {
         SpawnGoop();
@@ -40,6 +38,6 @@ public class StickyDice : Dice
         GameObject o = Instantiate(goopPrefab, new Vector3(transform.position.x, groundLevel, transform.position.z),
             Quaternion.identity);
 
-        o.GetComponent<Goop>().SetDuration = goopDuration;
+        o.GetComponent<Goop>().SetDuration = stickyDuration;
     }
 }

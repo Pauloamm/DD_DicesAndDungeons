@@ -6,17 +6,8 @@ using Random = System.Random;
 
 public class JumpDice : Dice
 {
-    private int jumpRoll;
-
-    [SerializeField]private int jumpForce;
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        damage = 0;
-        Random rg = new Random();
-        jumpRoll = rg.Next(maxRoll) + 1;
-
-    }
+    [SerializeField]
+    private int knockbackForce;
 
     protected override void Update()
     {
@@ -37,6 +28,6 @@ public class JumpDice : Dice
     {
         Rigidbody playerRb = GameObject.Find("Player").GetComponent<Rigidbody>();
         Transform cameraT = GameObject.Find("Main Camera").transform;
-        playerRb.AddForce(-cameraT.transform.forward * jumpForce * jumpRoll,ForceMode.Impulse);
+        playerRb.AddForce(-cameraT.transform.forward * knockbackForce * DiceEffectMultiplier, ForceMode.Impulse);
     }
 }

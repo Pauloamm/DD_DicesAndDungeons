@@ -11,30 +11,33 @@ public class DiceThrow : MonoBehaviour
     [SerializeField] private DicesInventory dicesInventory;
     private GameObject dice => dicesInventory.GetCurrentDiceInHand;
     [SerializeField] private Transform diceHolderT;
-    
-    
+
+
     private bool canThrow = false;
+
+    private float throwCooldown = 1.0f;
+    private float timeToNextThrow;
 
     public delegate void DiceAction();
 
     public event DiceAction diceThrown;
-    
-    // Update is called once per frame
+
     void Update()
     {
         if (!PlayerTransitionController.Instance.PlayerReady)
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timeToNextThrow <= 0)
         {
             canThrow = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-            Instantiate(dice,diceHolderT);
+        else
+        {
+            timeToNextThrow -= Time.deltaTime;
+        }
     }
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
         if (canThrow)
         {
@@ -42,6 +45,7 @@ public class DiceThrow : MonoBehaviour
 
             dice.GetComponent<Dice>().Shoot(transform.forward);
             diceThrown?.Invoke();
+            timeToNextThrow = throwCooldown;
             canThrow = false;
         }
     }
