@@ -156,6 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   diceImpulseStrength: 10
-  freezePrefab: {fileID: 713924753109590180, guid: 5bbe54104ff26e3408f806c0c73c530a,
+  freezePrefab: {fileID: 5360542396304255443, guid: 5bbe54104ff26e3408f806c0c73c530a,
     type: 3}
   freezeDuration: 0

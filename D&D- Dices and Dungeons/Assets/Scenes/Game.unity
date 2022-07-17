@@ -1467,6 +1467,7 @@ MonoBehaviour:
   - {fileID: 6030864936509314897, guid: c2e5f6280801e5f49820a15c4080025e, type: 3}
   - {fileID: 4112517164901138584, guid: c1c09c92580f4e445ac3f5ac24eee690, type: 3}
   - {fileID: 7810498981287021520, guid: be7b11abd1d2b47479f81fb6cb7d0604, type: 3}
+  - {fileID: 4588984126951235055, guid: 0c853e7b117da7248aa5b7e149f915b1, type: 3}
   diceThrow: {fileID: 963194229}
 --- !u!1001 &1006640031
 PrefabInstance:

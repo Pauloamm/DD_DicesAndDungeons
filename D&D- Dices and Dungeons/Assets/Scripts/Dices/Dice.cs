@@ -7,7 +7,7 @@ public class Dice : FloatingItem
 {
     [SerializeField] protected int damage;
 
-    [SerializeField] private float diceImpulseStrength = 10f;
+     private float diceImpulseStrength = 20f;
     public int Damage => damage;
 
 
