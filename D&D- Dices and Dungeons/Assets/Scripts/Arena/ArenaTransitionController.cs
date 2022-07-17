@@ -21,7 +21,7 @@ public class ArenaTransitionController : MonoBehaviour
 
     private float _waveTransitionSpeed;
 
-    public bool LoadingNewWave { get; private set; }
+    public bool LoadingNewWave { get;  set; }
     private float _initialArenaAngle;
     public float ArenaRotationLerp { get; private set; }
 
@@ -52,10 +52,7 @@ public class ArenaTransitionController : MonoBehaviour
 
     private void Update()
     {
-        if (!LoadingNewWave)
-        {
-            canLoadNewWave = false;
-        }
+        
 
         if (LoadingNewWave)
         {
@@ -93,7 +90,7 @@ public class ArenaTransitionController : MonoBehaviour
 
         float currentArenaAngle = Quaternion.Angle(transform.rotation, Quaternion.Euler(_wavesRotations[_currentWave - 1]));
         LoadingNewWave = currentArenaAngle > 0;
-
+        canLoadNewWave = LoadingNewWave;
         ArenaRotationLerp = Mathf.InverseLerp(Mathf.Abs(_initialArenaAngle), 0, currentArenaAngle);
     }
 

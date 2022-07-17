@@ -132,7 +132,7 @@ public class WaveManager : MonoBehaviour
         else if (currentEnemies.Count <= 0)
         {
             GetNextWave();
-
+            
             ArenaTransitionController.Instance.canLoadNewWave = true;
         }
     }

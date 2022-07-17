@@ -123,7 +123,7 @@ public class Enemy : MonoBehaviour, IHittable
 
     void Die()
     {
-        GameObject.Find("WaveMananger").GetComponent<WaveManager>().currentEnemies.Remove(this.gameObject);
+        GameObject.Find("WaveManager").GetComponent<WaveManager>().currentEnemies.Remove(this.gameObject);
 
         DestroyImmediate(this.gameObject);
     }
